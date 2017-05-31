@@ -24,12 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var TmrReadout: UILabel!
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var ScoreReadout: UILabel!
-    @IBAction func initButton(_ sender: UIButton) {
-            if sender.isSelected{
-                let scr = score + 1
-                ScoreReadout.text = ("\(scr)")
-                print("\(scr)")
-            }
+    @IBAction func initButton(_ sender: UIButton) {score = score + 1
+            ScoreReadout.text = ("\(score)")
     }
 
 }
