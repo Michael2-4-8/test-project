@@ -20,17 +20,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     var time = 30
-    var timer = Timer()
+    var score = 0
     @IBOutlet weak var TmrReadout: UILabel!
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var ScoreReadout: UILabel!
     @IBAction func initButton(_ sender: UIButton) {
-        while time > 0 {timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: false)  {
-            (Timer) in
-                self.time = self.time - 1
-                self.TmrReadout.text = ("\(self.time)")
+            if sender.isSelected{
+                let scr = score + 1
+                ScoreReadout.text = ("\(scr)")
+                print("\(scr)")
             }
-        }
     }
 
 }
