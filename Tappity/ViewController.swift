@@ -21,11 +21,49 @@ class ViewController: UIViewController {
     }
     var time = 30
     var score = 0
+    var game = false
     @IBOutlet weak var TmrReadout: UILabel!
+    @IBOutlet weak var initButton: UIButton!
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var ScoreReadout: UILabel!
-    @IBAction func initButton(_ sender: UIButton) {score = score + 1
+    func reset() {
+        score = 0
+        time = 30
+        ScoreReadout.text = ("\(score)")
+        TmrReadout.text = ("\(time)")
+        initButton.isEnabled = true
+        
+    }
+    func Scorer(){
+        game = true
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+            self.time = self.time - 1
+            self.TmrReadout.text = ("\(self.time)")
+            if self.time == 0 {
+                self.game = false
+                timer.invalidate()
+                let gameAlert = UIAlertController(title: "game Over", message: "Your score is \(self.score)", preferredStyle: UIAlertControllerStyle.alert)
+                
+                gameAlert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action: UIAlertAction!) in
+                    self.reset()
+                }))
+                self.present(gameAlert, animated: true, completion: nil)
+            }
+            
+            
+            
+        }
+        
+    }
+    @IBAction func initButtin(_ sender: UIButton) {
+            sender.isEnabled = false
+            Scorer()
+    }
+    @IBAction func ButtonPressed(_ sender: UIButton) {
+        if game == true{
+            score = score + 1
             ScoreReadout.text = ("\(score)")
+        }
     }
 
 }
