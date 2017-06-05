@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -26,12 +26,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var initButton: UIButton!
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var ScoreReadout: UILabel!
+    @IBOutlet var gameView: UIView!
+    let colours:(Array) = [UIColor.red, UIColor.green, UIColor.black, UIColor.orange, UIColor.gray, UIColor.white, UIColor.purple, UIColor.brown, UIColor.cyan, UIColor.yellow]
     func reset() {
         score = 0
         time = 30
         ScoreReadout.text = ("\(score)")
         TmrReadout.text = ("\(time)")
         initButton.isEnabled = true
+        gameView.backgroundColor = .blue
         
     }
     func Scorer(){
@@ -61,8 +64,11 @@ class ViewController: UIViewController {
     }
     @IBAction func ButtonPressed(_ sender: UIButton) {
         if game == true{
+            let randInt = Int(arc4random_uniform(10))
             score = score + 1
             ScoreReadout.text = ("\(score)")
+            gameView.backgroundColor = colours[randInt]
+            
         }
     }
 

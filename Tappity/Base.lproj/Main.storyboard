@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.25490196078431371" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="f5f-1f-h1y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="109.5" id="9ge-Zo-ak7"/>
                             <constraint firstItem="Kmh-jN-Wim" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IIH-53-qCL"/>
@@ -107,6 +107,7 @@
                     <connections>
                         <outlet property="ScoreReadout" destination="1Na-Ra-3y9" id="1fO-ue-Mjb"/>
                         <outlet property="TmrReadout" destination="b0J-p6-GW9" id="bft-bn-HAg"/>
+                        <outlet property="gameView" destination="8bC-Xf-vdC" id="1QC-ww-4c4"/>
                         <outlet property="initButton" destination="mLC-CP-ezv" id="SMS-dD-wBc"/>
                         <outlet property="tapButton" destination="Kmh-jN-Wim" id="w5x-XH-Bh3"/>
                     </connections>
