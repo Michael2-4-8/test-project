@@ -26,11 +26,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var initButton: UIButton!
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var ScoreReadout: UILabel!
+    @IBOutlet weak var progresssser: UIProgressView!
     @IBOutlet var gameView: UIView!
     let colours:(Array) = [UIColor.red, UIColor.green, UIColor.black, UIColor.orange, UIColor.gray, UIColor.white, UIColor.purple, UIColor.brown, UIColor.cyan, UIColor.yellow]
     func reset() {
         score = 0
         time = 30
+         
         ScoreReadout.text = ("\(score)")
         TmrReadout.text = ("\(time)")
         initButton.isEnabled = true
@@ -61,9 +63,13 @@ class ViewController: UIViewController {
     @IBAction func initButtin(_ sender: UIButton) {
             sender.isEnabled = false
             Scorer()
+        let rInt = Int(arc4random_uniform(10))
+        score = score + 1
+        ScoreReadout.text = ("\(score)")
+        gameView.backgroundColor = colours[rInt]
     }
     @IBAction func ButtonPressed(_ sender: UIButton) {
-        if game == true{
+            if game == true{
             let randInt = Int(arc4random_uniform(10))
             score = score + 1
             ScoreReadout.text = ("\(score)")
