@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         }
         
     }
+    //srhvyuiwehrgvowiuerhjafyqwkgrmnbvlhqwerhgffgbqjehrgqjhgjheqgrjhgqre
     @IBAction func initButtin(_ sender: UIButton) {
             sender.isEnabled = false
             Scorer()
