@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        //aouw haaaa
     }
     var time = 30
     var score = 0
